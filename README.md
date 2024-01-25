@@ -1,20 +1,9 @@
-# CVWO 2024 Assignment Backend
+# Forum Website Backend
 
-Name: Josh Thoo Jen Sen
+Welcome! This is the backend instance of a planned web forum website. The lightweight `go-gin` framework is used to simplify HTTP server processes. It uses a SQLite3 database for serverless management as well.
 
-This is the progress of my Golang backend as of 25 January 2024.
-
-I will be doing my own changes to enhance this beyond the deadline, as I think it is worth learning. Please consider hopping by here to see my product, which I will improve incrementally:
-https://github.com/josh1248/forum-website-backend
-
-This Golang app can handle:
-- Users: View of users, Creation of users, login of users (with generation of JWT tokens in cookies for successful logins)
-- Posts: View of posts
-
-I was unfortunately unable to complete:
-- Users: I managed to generate a JWT in a cookie upon successful authentication. However, I have yet to implement post creation by reading off this JWT cookie. JWT verification check implementation is not yet complete.
-- Posts: route to create posts.
-- Comments in posts.
+### Note
+NOTE: This repository is effectively a fork of my previous work for CVWO's 2024 Assignment at https://github.com/josh1248/forum-website-backend, which is itself a fork of CVWO's provided Go skeleton project at https://github.com/CVWO/sample-go-app. Self-forking is not allowed, and forking through an alternate account did not seem optimal. Hence, I copied my local files over to this repository.
 
 ## Getting Started
 
@@ -38,45 +27,4 @@ This backend uses Golang. It uses SQLite3 for its database, which is connected v
 
 This backend uses `go-gin` as its lightweight framework for HTTP server functionality.
 
-This is the main file structure. It is roughly based on the MVC framework. It is generated with the `file-tree-generator` extension at VSCode.
 
-```
-📦cvwo-assignment-24-backend
- ┣ 📂cmd
- ┃ ┣ 📂server
- ┃ ┃ ┗ 📜main.go //entry point.
- ┣ 📂internal
- ┃ ┣ 📂api remnants from skeleton golang fork mean. not yet used.
- ┃ ┃ ┗ 📜api.go 
- ┃ ┣ 📂auth
- ┃ ┃ ┣ 📜bcrypt.go //conversion of plaintext passwords to hashed + salted passwords for db storage.
- ┃ ┃ ┗ 📜jwt.go //generates JWT upon successful login
- ┃ ┣ 📂controllers
- ┃ ┃ ┣ 📜posts.go
- ┃ ┃ ┗ 📜users.go
- ┃ ┣ 📂db
- ┃ ┃ ┗ 📜forumdb //SQLite3 database data
- ┃ ┣ 📂entities //Golang types
- ┃ ┃ ┣ 📜comment.go
- ┃ ┃ ┣ 📜post.go
- ┃ ┃ ┗ 📜user.go
- ┃ ┣ 📂models //M part of MVC. Interacts with the db.
- ┃ ┃ ┣ 📜connect.go
- ┃ ┃ ┣ 📜posts.go
- ┃ ┃ ┣ 📜reset.go //clears junk data.
- ┃ ┃ ┗ 📜users.go
- ┃ ┣ 📂router
- ┃ ┃ ┗ 📜router.go
- ┃ ┗ 📂routes
- ┃ ┃ ┗ 📜routes.go
- ┣ 📂repotest
- ┃ ┗ 📜hello.go //used to verify remote import statements initially. not in use.
- ┣ 📜.gitignore
- ┣ 📜ERD_snapshot_050124.png
- ┣ 📜MasterKey.env //JWT signing secrets
- ┣ 📜MasterKey.exampleenv //for user setup
- ┣ 📜README.md
- ┣ 📜devlog.md
- ┣ 📜go.mod
- ┗ 📜go.sum
-```
