@@ -1,0 +1,13 @@
+# Sensitive variables
+.env
+.env.local
+.env.*.local
+
+# Editor
+.idea/*
+.vscode/*
+
+# Mac
+.DS_Store
+
+# hide database access secrets
